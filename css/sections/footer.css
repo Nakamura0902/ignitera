@@ -1,0 +1,108 @@
+#site-footer {
+  background-color: var(--color-navy);
+  color: var(--color-white);
+  padding-top: var(--space-12);
+  padding-bottom: 0;
+}
+
+.footer-main {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: var(--space-12);
+  align-items: start;
+  padding-bottom: var(--space-12);
+}
+
+/* Logo + tagline */
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.footer-logo {
+  height: 40px;
+  width: auto;
+  filter: brightness(0) invert(1);
+  mix-blend-mode: normal;
+  opacity: 0.9;
+}
+
+.footer-tagline {
+  font-size: var(--font-small);
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.7;
+  max-width: 280px;
+}
+
+/* Sitemap nav */
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.footer-nav-title {
+  font-size: var(--font-xs);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: var(--space-2);
+}
+
+.footer-nav-link {
+  font-size: var(--font-small);
+  color: rgba(255, 255, 255, 0.65);
+  transition: color var(--duration-fast) var(--ease-in-out);
+  padding-block: 0.2em;
+}
+
+.footer-nav-link:hover {
+  color: var(--color-white);
+}
+
+/* SNS */
+.footer-sns {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.footer-sns-title {
+  font-size: var(--font-xs);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: var(--space-2) - var(--space-3);
+}
+
+.sns-buttons {
+  display: flex;
+  gap: var(--space-2);
+}
+
+/* Bottom bar */
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-block: var(--space-4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-copy {
+  font-size: var(--font-xs);
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.footer-policy {
+  font-size: var(--font-xs);
+  color: rgba(255, 255, 255, 0.35);
+  transition: color var(--duration-fast) var(--ease-in-out);
+}
+
+.footer-policy:hover {
+  color: rgba(255, 255, 255, 0.7);
+}

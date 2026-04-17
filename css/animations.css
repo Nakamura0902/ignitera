@@ -1,0 +1,124 @@
+/* === Scroll Reveal Base States === */
+
+.scroll-reveal {
+  opacity: 0;
+  transition:
+    opacity var(--duration-slow) var(--ease-out-expo),
+    transform var(--duration-slow) var(--ease-out-expo);
+}
+
+.scroll-reveal[data-anim="fade-up"] {
+  transform: translateY(28px);
+}
+
+.scroll-reveal[data-anim="fade-left"] {
+  transform: translateX(-40px);
+}
+
+.scroll-reveal[data-anim="fade-right"] {
+  transform: translateX(40px);
+}
+
+.scroll-reveal[data-anim="scale-in"] {
+  transform: scale(0.94);
+}
+
+.scroll-reveal[data-anim="bar-grow"] {
+  transform: scaleY(0);
+  transform-origin: bottom;
+}
+
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* === Hero Entry Animation === */
+
+.hero-animate {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity var(--duration-enter) var(--ease-out-expo),
+    transform var(--duration-enter) var(--ease-out-expo);
+}
+
+.hero-animate.is-loaded {
+  opacity: 1;
+  transform: none;
+}
+
+.hero-logo-animate {
+  opacity: 0;
+  transform: scale(0.92);
+  transition:
+    opacity var(--duration-enter) var(--ease-out-expo),
+    transform var(--duration-enter) var(--ease-out-expo);
+}
+
+.hero-logo-animate.is-loaded {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* === Keyframes === */
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+/* === Nav underline hover === */
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--color-blue);
+  border-radius: 1px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--duration-fast) var(--ease-out-expo);
+}
+
+.nav-link:hover::after,
+.nav-link.is-active::after {
+  transform: scaleX(1);
+}
+
+/* === Reduced motion override === */
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal,
+  .scroll-reveal.is-visible,
+  .hero-animate,
+  .hero-animate.is-loaded,
+  .hero-logo-animate,
+  .hero-logo-animate.is-loaded {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .scroll-indicator__dot {
+    animation: none;
+  }
+}

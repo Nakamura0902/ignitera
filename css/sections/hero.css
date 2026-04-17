@@ -1,0 +1,117 @@
+#hero {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: var(--header-height);
+  background-color: var(--color-white);
+  background-image:
+    radial-gradient(ellipse 70% 60% at 80% 20%, rgba(0, 198, 255, 0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 20% 80%, rgba(26, 111, 212, 0.04) 0%, transparent 60%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+  align-items: center;
+  padding-block: var(--space-12);
+}
+
+/* Left: Text */
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.hero-badge {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.hero-tagline {
+  font-size: var(--font-display);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  color: var(--color-navy);
+  margin: 0;
+}
+
+.hero-mission {
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  max-width: 480px;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin-top: var(--space-2);
+}
+
+.hero-accent-line {
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-cyan), var(--color-blue));
+  border-radius: 2px;
+  margin-top: var(--space-2);
+}
+
+/* Right: Logo visual */
+.hero-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hero-logo-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-logo-glow {
+  position: absolute;
+  inset: -40px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 198, 255, 0.10) 0%, rgba(0, 198, 255, 0.04) 50%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-logo-glow::before {
+  content: '';
+  position: absolute;
+  inset: 20px;
+  border-radius: 50%;
+  box-shadow:
+    0 0 40px rgba(0, 198, 255, 0.12),
+    0 0 80px rgba(26, 111, 212, 0.08),
+    0 0 120px rgba(11, 61, 140, 0.05);
+}
+
+.hero-logo-img {
+  width: clamp(240px, 30vw, 380px);
+  height: auto;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 8px 24px rgba(11, 61, 140, 0.15));
+}
+
+/* Scroll indicator */
+.hero-scroll {
+  position: absolute;
+  bottom: var(--space-6);
+  left: 50%;
+  transform: translateX(-50%);
+}

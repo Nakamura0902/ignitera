@@ -1,0 +1,219 @@
+/* Accent Bar — シグネチャ要素「飛び出してくる棒」 */
+.accent-bar {
+  display: inline-block;
+  width: 4px;
+  height: 2.4em;
+  background: linear-gradient(180deg, var(--color-cyan), var(--color-blue));
+  border-radius: 2px;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+
+.accent-bar--green {
+  background: linear-gradient(180deg, var(--color-green), #16A34A);
+}
+
+.accent-bar--white {
+  background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.4));
+}
+
+.accent-bar--horizontal {
+  width: 80px;
+  height: 3px;
+  display: block;
+}
+
+.accent-bar--large {
+  width: 6px;
+  height: 4em;
+}
+
+/* Decorative block behind CEO photo */
+.accent-block {
+  position: absolute;
+  width: 12px;
+  height: 200px;
+  background: linear-gradient(180deg, var(--color-cyan), var(--color-blue));
+  border-radius: 4px;
+  opacity: 0.2;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  padding: 0.75em 1.75em;
+  border-radius: var(--radius-md);
+  font-size: var(--font-small);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  transition:
+    background-color var(--duration-fast) var(--ease-in-out),
+    color var(--duration-fast) var(--ease-in-out),
+    border-color var(--duration-fast) var(--ease-in-out),
+    box-shadow var(--duration-fast) var(--ease-in-out),
+    transform var(--duration-fast) var(--ease-in-out);
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn-primary {
+  background-color: var(--color-blue);
+  color: var(--color-white);
+  border: 1.5px solid var(--color-blue);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-navy);
+  border-color: var(--color-navy);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-blue);
+  border: 1.5px solid var(--color-blue);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-blue);
+  color: var(--color-white);
+}
+
+.btn-outline-white {
+  background-color: transparent;
+  color: var(--color-white);
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+}
+
+.btn-outline-white:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Badge / Tag */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0.3em 0.8em;
+  border-radius: var(--radius-full);
+  font-size: var(--font-xs);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.badge-cyan {
+  background-color: var(--color-cyan-light);
+  color: var(--color-navy);
+}
+
+/* Card */
+.card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6) var(--space-4);
+  box-shadow: var(--shadow-sm);
+  transition:
+    box-shadow var(--duration-base) var(--ease-out-expo),
+    transform var(--duration-base) var(--ease-out-expo);
+  border-left: 4px solid var(--color-blue);
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+  border-left-color: var(--color-cyan);
+}
+
+/* Value card decoration number */
+.card-number {
+  position: absolute;
+  top: -0.15em;
+  right: 0.3em;
+  font-size: 5rem;
+  font-weight: 800;
+  color: var(--color-cyan);
+  opacity: 0.07;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -0.05em;
+}
+
+/* SNS icon button */
+.sns-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.7);
+  transition:
+    background-color var(--duration-fast) var(--ease-in-out),
+    border-color var(--duration-fast) var(--ease-in-out),
+    color var(--duration-fast) var(--ease-in-out),
+    transform var(--duration-fast) var(--ease-in-out);
+}
+
+.sns-btn:hover {
+  background-color: var(--color-blue);
+  border-color: var(--color-white);
+  color: var(--color-white);
+  transform: scale(1.08);
+}
+
+.sns-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+/* Divider */
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-border);
+}
+
+.divider--navy {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Scroll down indicator */
+.scroll-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+  color: var(--color-text-muted);
+  font-size: var(--font-xs);
+  letter-spacing: 0.1em;
+}
+
+.scroll-indicator__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-cyan);
+  animation: scroll-bounce 1.5s var(--ease-in-out) infinite;
+}
+
+@keyframes scroll-bounce {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(8px); opacity: 0.4; }
+}
