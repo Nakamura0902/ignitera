@@ -26,6 +26,7 @@
   <link rel="stylesheet" href="css/sections/hero.css">
   <link rel="stylesheet" href="css/sections/mission-vision.css">
   <link rel="stylesheet" href="css/sections/values.css">
+  <link rel="stylesheet" href="css/sections/services.css">
   <link rel="stylesheet" href="css/sections/representative.css">
   <link rel="stylesheet" href="css/sections/company-info.css">
   <link rel="stylesheet" href="css/sections/footer.css">
@@ -44,8 +45,9 @@
         </a>
 
         <nav class="header-nav" aria-label="メインナビゲーション">
-          <a href="#mission-vision" class="nav-link">ミッション</a>
-          <a href="#values" class="nav-link">バリュー</a>
+          <a href="#mission-vision" class="nav-link">MISSION・VISION</a>
+          <a href="#values" class="nav-link">VALUES</a>
+          <a href="#services" class="nav-link">事業内容</a>
           <a href="#representative" class="nav-link">代表メッセージ</a>
           <a href="#company-info" class="nav-link">会社概要</a>
         </nav>
@@ -65,6 +67,7 @@
   <nav class="mobile-nav" aria-label="モバイルナビゲーション">
     <a href="#mission-vision" class="nav-link">ミッション</a>
     <a href="#values" class="nav-link">バリュー</a>
+    <a href="#services" class="nav-link">事業内容</a>
     <a href="#representative" class="nav-link">代表メッセージ</a>
     <a href="#company-info" class="nav-link">会社概要</a>
     <a href="#contact" class="nav-link">お問い合わせ</a>
@@ -240,6 +243,109 @@
     </section>
 
     <!-- ============================================================
+         SERVICES
+    ============================================================ -->
+    <section id="services" class="section">
+      <div class="container">
+
+        <div class="section-header section-header--center">
+          <span class="section-label scroll-reveal" data-anim="fade-up">
+            <span class="accent-bar"></span>
+            SERVICES
+          </span>
+          <h2 class="text-h2 text-navy scroll-reveal" data-anim="fade-up" data-delay="100">
+            事業内容
+          </h2>
+        </div>
+
+        <div class="services-grid">
+
+          <!-- 01 Web/EC制作 -->
+          <div class="service-card scroll-reveal" data-anim="fade-up">
+            <div class="service-bar" aria-hidden="true"></div>
+            <div class="service-card-head">
+              <span class="service-card-num" aria-hidden="true">01</span>
+            </div>
+            <div class="service-card-body">
+              <h3 class="service-card-title">Web / EC制作</h3>
+              <p class="service-card-desc">
+                コーポレートサイトからECサイトまで、ビジネスの成果に直結するWebを設計・制作する。デザインと機能の両立を、実績に基づいて実現する。
+              </p>
+            </div>
+            <span class="service-card-arrow">
+              詳しく見る
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </div>
+
+          <!-- 02 アプリ制作 -->
+          <div class="service-card scroll-reveal" data-anim="fade-up" data-delay="80">
+            <div class="service-bar" aria-hidden="true"></div>
+            <div class="service-card-head">
+              <span class="service-card-num" aria-hidden="true">02</span>
+            </div>
+            <div class="service-card-body">
+              <h3 class="service-card-title">アプリ制作</h3>
+              <p class="service-card-desc">
+                iOS・Androidのネイティブアプリ開発から、クロスプラットフォーム対応まで。ユーザー体験を最優先に、現場の課題を解決するアプリを届ける。
+              </p>
+            </div>
+            <span class="service-card-arrow">
+              詳しく見る
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </div>
+
+          <!-- 03 Benchmark x Action OS -->
+          <div class="service-card scroll-reveal" data-anim="fade-up" data-delay="160">
+            <div class="service-bar" aria-hidden="true"></div>
+            <div class="service-card-head">
+              <span class="service-card-num" aria-hidden="true">03</span>
+            </div>
+            <div class="service-card-body">
+              <h3 class="service-card-title">Benchmark <em>×</em> Action OS</h3>
+              <p class="service-card-desc">
+                業界標準のベンチマークと、現場のアクションを連動させる独自プラットフォーム。計測・分析・改善のサイクルを仕組み化し、組織の成長を加速させる。
+              </p>
+            </div>
+            <span class="service-card-arrow">
+              詳しく見る
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </div>
+
+          <!-- 04 証明インフラ (coming soon) -->
+          <div class="service-card service-card--coming scroll-reveal" data-anim="fade-up" data-delay="240">
+            <div class="service-bar" aria-hidden="true"></div>
+            <div class="service-card-head">
+              <span class="service-card-num" aria-hidden="true">04</span>
+              <span class="service-coming-badge">Coming Soon</span>
+            </div>
+            <div class="service-card-body">
+              <h3 class="service-card-title">証明インフラ</h3>
+              <p class="service-card-desc">
+                努力・実績・信頼を記録し、証明可能なデータとして積み上げるインフラを構築する。IGNITERAが最も届けたい、未来への基盤。
+              </p>
+            </div>
+            <span class="service-card-arrow" style="color: #16A34A;">
+              続報をお待ちください
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
          REPRESENTATIVE
     ============================================================ -->
     <section id="representative" class="section">
@@ -263,7 +369,6 @@
                   <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
                   <circle cx="12" cy="7" r="4"/>
                 </svg>
-                <span>お写真</span>
               </div>
             </div>
             <div class="rep-name">
@@ -389,6 +494,7 @@
           <p class="footer-nav-title">MENU</p>
           <a href="#mission-vision" class="footer-nav-link">ミッション・ビジョン</a>
           <a href="#values" class="footer-nav-link">バリュー</a>
+          <a href="#services" class="footer-nav-link">事業内容</a>
           <a href="#representative" class="footer-nav-link">代表メッセージ</a>
           <a href="#company-info" class="footer-nav-link">会社概要</a>
           <a href="#contact" class="footer-nav-link">お問い合わせ</a>

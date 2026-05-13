@@ -5,6 +5,10 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
   .company-inner {
     grid-template-columns: 1fr;
     gap: var(--space-8);
