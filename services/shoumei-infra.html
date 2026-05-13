@@ -215,7 +215,7 @@
             <h2 class="sp-contact-title">事前登録で<br>いち早く情報を受け取る</h2>
             <p class="sp-contact-body">証明インフラのローンチ情報・ベータ版招待・詳細資料をいち早くお届けします。登録は無料です。</p>
           </div>
-          <form class="sp-form scroll-reveal" data-anim="fade-right" action="mailto:contact@ignitera.co.jp" method="post" enctype="text/plain">
+          <form class="sp-form scroll-reveal" data-anim="fade-right" id="contact-form" novalidate>
             <div class="sp-form-row">
               <div class="sp-form-group">
                 <label class="sp-form-label" for="name">お名前<span>*</span></label>
@@ -309,5 +309,9 @@
 
   <script src="../js/scroll-animations.js" defer></script>
   <script src="../js/nav.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../js/supabase-config.js"></script>
+  <script src="../js/form-submit.js"></script>
+  <script>initContactForm(document.getElementById('contact-form'), 'shoumei-infra');</script>
 </body>
 </html>

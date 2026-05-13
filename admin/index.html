@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>管理画面 — IGNITERA</title>
+  <meta name="robots" content="noindex, nofollow">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0B3D8C;
+      --blue: #1A6FD4;
+      --cyan: #00C6FF;
+      --green: #22C55E;
+      --bg: #f0f4f8;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --text: #0f172a;
+      --muted: #64748b;
+      --radius: 10px;
+    }
+
+    body {
+      font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* ── Login ── */
+    #login-screen {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 1rem;
+    }
+    .login-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2.5rem;
+      width: 100%;
+      max-width: 420px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    }
+    .login-logo {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: 0.08em;
+      margin-bottom: 0.4rem;
+    }
+    .login-sub {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+    .login-label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+    .login-input {
+      width: 100%;
+      padding: 0.65rem 0.875rem;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-family: inherit;
+      color: var(--text);
+      background: var(--bg);
+      margin-bottom: 1rem;
+      transition: border-color 200ms;
+    }
+    .login-input:focus {
+      outline: none;
+      border-color: var(--blue);
+      background: #fff;
+    }
+    .login-btn {
+      width: 100%;
+      padding: 0.7rem;
+      background: var(--navy);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      transition: background 200ms;
+    }
+    .login-btn:hover { background: var(--blue); }
+    .login-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+    .login-error {
+      font-size: 0.8rem;
+      color: #ef4444;
+      margin-top: 0.75rem;
+      text-align: center;
+      display: none;
+    }
+
+    /* ── App shell ── */
+    #app-screen { display: none; }
+
+    .app-header {
+      background: var(--navy);
+      color: #fff;
+      padding: 0 2rem;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .app-header-logo {
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+    }
+    .app-header-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .app-header-email {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.55);
+    }
+    .logout-btn {
+      background: rgba(255,255,255,0.12);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 6px;
+      padding: 0.35rem 0.8rem;
+      font-size: 0.8rem;
+      font-family: inherit;
+      cursor: pointer;
+      transition: background 200ms;
+    }
+    .logout-btn:hover { background: rgba(255,255,255,0.2); }
+
+    .app-main {
+      max-width: 1280px;
+      margin-inline: auto;
+      padding: 2rem 1.5rem;
+    }
+
+    /* ── Toolbar ── */
+    .toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.25rem;
+    }
+    .toolbar-left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .toolbar-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .count-badge {
+      background: var(--navy);
+      color: #fff;
+      border-radius: 20px;
+      padding: 0.2rem 0.65rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+    .filter-select {
+      padding: 0.5rem 0.75rem;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-family: inherit;
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+    }
+    .filter-select:focus { outline: none; border-color: var(--blue); }
+    .refresh-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.5rem 0.875rem;
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-family: inherit;
+      color: var(--muted);
+      cursor: pointer;
+      transition: border-color 200ms, color 200ms;
+    }
+    .refresh-btn:hover { border-color: var(--blue); color: var(--blue); }
+
+    /* ── Stats ── */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem 1.25rem;
+    }
+    .stat-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.3rem;
+    }
+    .stat-value {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1;
+    }
+
+    /* ── Table ── */
+    .table-wrap {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .table-scroll { overflow-x: auto; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+    }
+    thead { background: #f8fafc; }
+    th {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      white-space: nowrap;
+      border-bottom: 1px solid var(--border);
+    }
+    td {
+      padding: 0.875rem 1rem;
+      border-bottom: 1px solid #f1f5f9;
+      vertical-align: top;
+    }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: #f8fafc; }
+
+    .service-badge {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 20px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .badge-web-ec    { background: rgba(26,111,212,0.1); color: var(--blue); }
+    .badge-app       { background: rgba(0,198,255,0.1); color: #0891b2; }
+    .badge-benchmark { background: rgba(168,85,247,0.1); color: #7c3aed; }
+    .badge-shoumei-infra { background: rgba(34,197,94,0.1); color: #16a34a; }
+
+    .td-name  { font-weight: 600; color: var(--text); }
+    .td-email { color: var(--blue); font-size: 0.82rem; }
+    .td-company { color: var(--muted); font-size: 0.82rem; }
+    .td-message {
+      max-width: 280px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+    .td-date { color: var(--muted); white-space: nowrap; font-size: 0.8rem; }
+
+    /* Empty / Loading / Error */
+    .table-state {
+      text-align: center;
+      padding: 3rem 1rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .table-state svg {
+      display: block;
+      margin: 0 auto 0.75rem;
+      opacity: 0.3;
+    }
+
+    /* Spinner */
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .spinner {
+      width: 20px; height: 20px;
+      border: 2px solid var(--border);
+      border-top-color: var(--blue);
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+      margin-inline: auto;
+    }
+
+    @media (max-width: 640px) {
+      .app-header { padding: 0 1rem; }
+      .app-main { padding: 1rem; }
+      .app-header-email { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- LOGIN SCREEN -->
+  <div id="login-screen">
+    <div class="login-card">
+      <p class="login-logo">IGNITERA</p>
+      <p class="login-sub">管理画面 — お問い合わせ一覧</p>
+      <label class="login-label" for="login-email">メールアドレス</label>
+      <input class="login-input" type="email" id="login-email" placeholder="admin@ignitera.co.jp" autocomplete="email">
+      <label class="login-label" for="login-password">パスワード</label>
+      <input class="login-input" type="password" id="login-password" placeholder="••••••••" autocomplete="current-password">
+      <button class="login-btn" id="login-btn">ログイン</button>
+      <p class="login-error" id="login-error"></p>
+    </div>
+  </div>
+
+  <!-- APP SCREEN -->
+  <div id="app-screen">
+    <header class="app-header">
+      <span class="app-header-logo">IGNITERA Admin</span>
+      <div class="app-header-right">
+        <span class="app-header-email" id="user-email"></span>
+        <button class="logout-btn" id="logout-btn">ログアウト</button>
+      </div>
+    </header>
+
+    <main class="app-main">
+      <!-- Stats -->
+      <div class="stats-grid" id="stats-grid">
+        <div class="stat-card"><p class="stat-label">合計</p><p class="stat-value" id="stat-total">—</p></div>
+        <div class="stat-card"><p class="stat-label">Web / EC</p><p class="stat-value" id="stat-web-ec">—</p></div>
+        <div class="stat-card"><p class="stat-label">アプリ</p><p class="stat-value" id="stat-app">—</p></div>
+        <div class="stat-card"><p class="stat-label">Benchmark</p><p class="stat-value" id="stat-benchmark">—</p></div>
+        <div class="stat-card"><p class="stat-label">証明インフラ</p><p class="stat-value" id="stat-shoumei">—</p></div>
+      </div>
+
+      <!-- Toolbar -->
+      <div class="toolbar">
+        <div class="toolbar-left">
+          <span class="toolbar-title">お問い合わせ一覧</span>
+          <span class="count-badge" id="count-badge">0件</span>
+        </div>
+        <div class="toolbar-left">
+          <select class="filter-select" id="filter-service">
+            <option value="">すべての事業</option>
+            <option value="web-ec">Web / EC制作</option>
+            <option value="app">アプリ制作</option>
+            <option value="benchmark">Benchmark × Action OS</option>
+            <option value="shoumei-infra">証明インフラ</option>
+          </select>
+          <button class="refresh-btn" id="refresh-btn">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M12 7A5 5 0 1 1 7 2a5 5 0 0 1 3.54 1.46L12 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M9 5h3V2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            更新
+          </button>
+        </div>
+      </div>
+
+      <!-- Table -->
+      <div class="table-wrap">
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>日時</th>
+                <th>事業</th>
+                <th>お名前</th>
+                <th>会社名</th>
+                <th>メールアドレス</th>
+                <th>相談内容</th>
+                <th>メッセージ</th>
+              </tr>
+            </thead>
+            <tbody id="table-body">
+              <tr><td colspan="7" class="table-state"><div class="spinner"></div></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../js/supabase-config.js"></script>
+  <script>
+    const loginScreen = document.getElementById('login-screen');
+    const appScreen   = document.getElementById('app-screen');
+    const loginBtn    = document.getElementById('login-btn');
+    const loginError  = document.getElementById('login-error');
+    const logoutBtn   = document.getElementById('logout-btn');
+    const filterEl    = document.getElementById('filter-service');
+    const refreshBtn  = document.getElementById('refresh-btn');
+    const tableBody   = document.getElementById('table-body');
+    const countBadge  = document.getElementById('count-badge');
+
+    const SERVICE_LABELS = {
+      'web-ec':        'Web / EC制作',
+      'app':           'アプリ制作',
+      'benchmark':     'Benchmark × Action OS',
+      'shoumei-infra': '証明インフラ',
+    };
+
+    let allRows = [];
+
+    // ── Auth state ──
+    _supabase.auth.onAuthStateChange((_event, session) => {
+      if (session) {
+        loginScreen.style.display = 'none';
+        appScreen.style.display = 'block';
+        document.getElementById('user-email').textContent = session.user.email;
+        loadData();
+      } else {
+        loginScreen.style.display = 'flex';
+        appScreen.style.display = 'none';
+      }
+    });
+
+    // ── Login ──
+    loginBtn.addEventListener('click', async () => {
+      const email    = document.getElementById('login-email').value.trim();
+      const password = document.getElementById('login-password').value;
+
+      loginBtn.disabled = true;
+      loginBtn.textContent = 'ログイン中…';
+      loginError.style.display = 'none';
+
+      const { error } = await _supabase.auth.signInWithPassword({ email, password });
+      loginBtn.disabled = false;
+      loginBtn.textContent = 'ログイン';
+
+      if (error) {
+        loginError.textContent = 'メールアドレスまたはパスワードが正しくありません。';
+        loginError.style.display = 'block';
+      }
+    });
+
+    // Enter key on password field
+    document.getElementById('login-password').addEventListener('keydown', e => {
+      if (e.key === 'Enter') loginBtn.click();
+    });
+
+    // ── Logout ──
+    logoutBtn.addEventListener('click', () => _supabase.auth.signOut());
+
+    // ── Load data ──
+    async function loadData() {
+      tableBody.innerHTML = '<tr><td colspan="7" class="table-state"><div class="spinner"></div></td></tr>';
+
+      const { data, error } = await _supabase
+        .from('contact_submissions')
+        .select('*')
+        .order('created_at', { ascending: false });
+
+      if (error) {
+        tableBody.innerHTML = `<tr><td colspan="7" class="table-state">データの取得に失敗しました: ${error.message}</td></tr>`;
+        return;
+      }
+
+      allRows = data || [];
+      updateStats(allRows);
+      renderTable(allRows);
+    }
+
+    function updateStats(rows) {
+      document.getElementById('stat-total').textContent    = rows.length;
+      document.getElementById('stat-web-ec').textContent   = rows.filter(r => r.service === 'web-ec').length;
+      document.getElementById('stat-app').textContent      = rows.filter(r => r.service === 'app').length;
+      document.getElementById('stat-benchmark').textContent = rows.filter(r => r.service === 'benchmark').length;
+      document.getElementById('stat-shoumei').textContent  = rows.filter(r => r.service === 'shoumei-infra').length;
+    }
+
+    function renderTable(rows) {
+      countBadge.textContent = rows.length + '件';
+
+      if (!rows.length) {
+        tableBody.innerHTML = `
+          <tr><td colspan="7" class="table-state">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="4" y="6" width="24" height="20" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M10 12h12M10 17h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            まだお問い合わせはありません
+          </td></tr>`;
+        return;
+      }
+
+      tableBody.innerHTML = rows.map(row => {
+        const date = new Date(row.created_at);
+        const dateStr = date.toLocaleDateString('ja-JP', { year:'numeric', month:'2-digit', day:'2-digit' })
+          + ' ' + date.toLocaleTimeString('ja-JP', { hour:'2-digit', minute:'2-digit' });
+        const badge = `<span class="service-badge badge-${row.service}">${SERVICE_LABELS[row.service] || row.service}</span>`;
+        const msg = row.message ? escapeHtml(row.message) : '<span style="opacity:.4">—</span>';
+        const co  = row.company ? `<span class="td-company">${escapeHtml(row.company)}</span>` : '<span style="opacity:.4">—</span>';
+        const st  = row.service_type || '<span style="opacity:.4">—</span>';
+        return `
+          <tr>
+            <td class="td-date">${dateStr}</td>
+            <td>${badge}</td>
+            <td class="td-name">${escapeHtml(row.name)}</td>
+            <td>${co}</td>
+            <td class="td-email"><a href="mailto:${escapeHtml(row.email)}">${escapeHtml(row.email)}</a></td>
+            <td>${st}</td>
+            <td class="td-message" title="${row.message ? escapeHtml(row.message) : ''}">${msg}</td>
+          </tr>`;
+      }).join('');
+    }
+
+    function escapeHtml(str) {
+      return String(str)
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    // ── Filter ──
+    filterEl.addEventListener('change', () => {
+      const val = filterEl.value;
+      renderTable(val ? allRows.filter(r => r.service === val) : allRows);
+    });
+
+    // ── Refresh ──
+    refreshBtn.addEventListener('click', loadData);
+  </script>
+
+</body>
+</html>

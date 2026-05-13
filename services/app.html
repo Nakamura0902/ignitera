@@ -156,7 +156,7 @@
             <h2 class="sp-contact-title">アプリ制作について<br>ご相談ください</h2>
             <p class="sp-contact-body">アプリ開発のご依頼・お見積り・ご相談など、お気軽にお問い合わせください。通常2営業日以内にご返信いたします。</p>
           </div>
-          <form class="sp-form scroll-reveal" data-anim="fade-right" action="mailto:contact@ignitera.co.jp" method="post" enctype="text/plain">
+          <form class="sp-form scroll-reveal" data-anim="fade-right" id="contact-form" novalidate>
             <div class="sp-form-row">
               <div class="sp-form-group">
                 <label class="sp-form-label" for="name">お名前<span>*</span></label>
@@ -251,5 +251,9 @@
 
   <script src="../js/scroll-animations.js" defer></script>
   <script src="../js/nav.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../js/supabase-config.js"></script>
+  <script src="../js/form-submit.js"></script>
+  <script>initContactForm(document.getElementById('contact-form'), 'app');</script>
 </body>
 </html>
