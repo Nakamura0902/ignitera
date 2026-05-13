@@ -23,6 +23,7 @@
 .footer-logo {
   height: 44px;
   width: auto;
+  align-self: flex-start;
   mix-blend-mode: screen;
   opacity: 0.9;
 }
