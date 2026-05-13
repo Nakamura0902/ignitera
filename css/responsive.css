@@ -82,12 +82,8 @@
   }
 
   /* Mission/Vision */
-  .mv-inner {
+  .mv-grid {
     grid-template-columns: 1fr;
-  }
-
-  .mv-divider {
-    display: none;
   }
 
   /* Values */
