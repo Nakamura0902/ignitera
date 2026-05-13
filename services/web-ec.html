@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web / EC制作 — IGNITERA</title>
+  <meta name="description" content="コーポレートサイトからECサイトまで、ビジネスの成果に直結するWebを設計・制作します。">
+  <link rel="icon" type="image/png" href="../logo/3g8qrztn.png">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/typography.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/sections/header.css">
+  <link rel="stylesheet" href="../css/sections/footer.css">
+  <link rel="stylesheet" href="../css/service-page.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+  <header id="site-header" role="banner">
+    <div class="container">
+      <div class="header-inner">
+        <a href="../index.html" class="header-logo" aria-label="IGNITERA トップへ">
+          <img src="../logo/3g8qrztn.png" alt="IGNITERA">
+        </a>
+        <nav class="header-nav" aria-label="メインナビゲーション">
+          <a href="../index.html#mission-vision" class="nav-link">MISSION・VISION</a>
+          <a href="../index.html#values" class="nav-link">VALUES</a>
+          <a href="../index.html#services" class="nav-link is-active">事業内容</a>
+          <a href="../index.html#representative" class="nav-link">代表メッセージ</a>
+          <a href="../index.html#company-info" class="nav-link">会社概要</a>
+        </nav>
+        <a href="#contact" class="btn btn-outline header-cta">お問い合わせ</a>
+        <button class="hamburger" aria-label="メニューを開く">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="mobile-nav">
+    <a href="../index.html#mission-vision" class="nav-link">ミッション</a>
+    <a href="../index.html#values" class="nav-link">バリュー</a>
+    <a href="../index.html#services" class="nav-link">事業内容</a>
+    <a href="../index.html#representative" class="nav-link">代表メッセージ</a>
+    <a href="../index.html#company-info" class="nav-link">会社概要</a>
+    <a href="#contact" class="nav-link">お問い合わせ</a>
+  </nav>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="sp-hero">
+      <div class="container">
+        <div class="sp-hero-inner">
+          <a href="../index.html#services" class="sp-hero-back">
+            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M13 8H3M7 12l-4-4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            事業一覧へ戻る
+          </a>
+          <p class="sp-hero-label">
+            <span class="accent-bar accent-bar--white"></span>
+            SERVICE 01
+          </p>
+          <h1 class="sp-hero-title">Web / <em>EC制作</em></h1>
+          <p class="sp-hero-desc">
+            コーポレートサイトからECサイトまで、ビジネスの成果に直結するWebを設計・制作する。デザインと機能の両立を、実績に基づいて実現する。
+          </p>
+          <a href="#contact" class="sp-hero-cta">
+            このサービスについて相談する
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES OFFERED -->
+    <section class="sp-services">
+      <div class="container">
+        <p class="section-label scroll-reveal" data-anim="fade-up">
+          <span class="accent-bar"></span>
+          WHAT WE OFFER
+        </p>
+        <h2 class="text-h2 text-navy scroll-reveal" data-anim="fade-up" data-delay="100">提供サービス</h2>
+
+        <div class="sp-services-grid">
+
+          <div class="sp-service-item scroll-reveal" data-anim="fade-up">
+            <div class="sp-service-icon">
+              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            </div>
+            <h3 class="sp-service-name">コーポレートサイト制作</h3>
+            <p class="sp-service-desc">企業の信頼と実績を伝えるコーポレートサイトを設計・制作。ブランドの世界観を損なわず、SEO・パフォーマンスを両立する。</p>
+          </div>
+
+          <div class="sp-service-item scroll-reveal" data-anim="fade-up" data-delay="80">
+            <div class="sp-service-icon">
+              <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            </div>
+            <h3 class="sp-service-name">ECサイト構築</h3>
+            <p class="sp-service-desc">売上に直結するECサイトをゼロから構築。商品管理・決済・在庫連携まで一気通貫で対応し、運用しやすい仕組みを整える。</p>
+          </div>
+
+          <div class="sp-service-item scroll-reveal" data-anim="fade-up" data-delay="160">
+            <div class="sp-service-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            </div>
+            <h3 class="sp-service-name">ランディングページ（LP）</h3>
+            <p class="sp-service-desc">コンバージョンに特化したLPを設計・制作。ユーザーの行動導線を分析し、成果が出るページを届ける。</p>
+          </div>
+
+          <div class="sp-service-item scroll-reveal" data-anim="fade-up" data-delay="240">
+            <div class="sp-service-icon">
+              <svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            </div>
+            <h3 class="sp-service-name">サイトリニューアル</h3>
+            <p class="sp-service-desc">既存サイトの課題を分析し、デザイン・構造・パフォーマンスを全面改善。ビジネス成長に合わせた最適化を行う。</p>
+          </div>
+
+          <div class="sp-service-item scroll-reveal" data-anim="fade-up" data-delay="320">
+            <div class="sp-service-icon">
+              <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </div>
+            <h3 class="sp-service-name">SEO対策</h3>
+            <p class="sp-service-desc">技術的SEOからコンテンツ戦略まで一貫して対応。検索流入を増やし、持続的な集客基盤を構築する。</p>
+          </div>
+
+          <div class="sp-service-item scroll-reveal" data-anim="fade-up" data-delay="400">
+            <div class="sp-service-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="sp-service-name">保守・運用サポート</h3>
+            <p class="sp-service-desc">公開後の更新・セキュリティ対応・パフォーマンス改善まで継続的にサポート。安心して本業に集中できる体制を整える。</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT FORM -->
+    <section class="sp-contact" id="contact">
+      <div class="container">
+        <div class="sp-contact-inner">
+
+          <div class="sp-contact-lead scroll-reveal" data-anim="fade-left">
+            <p class="section-label">
+              <span class="accent-bar"></span>
+              CONTACT
+            </p>
+            <h2 class="sp-contact-title">Web / EC制作について<br>ご相談ください</h2>
+            <p class="sp-contact-body">
+              サイト制作のご依頼・お見積り・ご相談など、お気軽にお問い合わせください。通常2営業日以内にご返信いたします。
+            </p>
+          </div>
+
+          <form class="sp-form scroll-reveal" data-anim="fade-right" action="mailto:contact@ignitera.co.jp" method="post" enctype="text/plain">
+            <div class="sp-form-row">
+              <div class="sp-form-group">
+                <label class="sp-form-label" for="name">お名前<span>*</span></label>
+                <input class="sp-form-input" type="text" id="name" name="name" placeholder="山田 太郎" required>
+              </div>
+              <div class="sp-form-group">
+                <label class="sp-form-label" for="company">会社名</label>
+                <input class="sp-form-input" type="text" id="company" name="company" placeholder="株式会社○○">
+              </div>
+            </div>
+            <div class="sp-form-group">
+              <label class="sp-form-label" for="email">メールアドレス<span>*</span></label>
+              <input class="sp-form-input" type="email" id="email" name="email" placeholder="your@email.com" required>
+            </div>
+            <div class="sp-form-group">
+              <label class="sp-form-label" for="service-type">ご相談内容</label>
+              <div class="sp-form-select-wrap">
+                <select class="sp-form-select" id="service-type" name="service-type">
+                  <option value="">選択してください</option>
+                  <option value="corporate">コーポレートサイト制作</option>
+                  <option value="ec">ECサイト構築</option>
+                  <option value="lp">ランディングページ</option>
+                  <option value="renewal">サイトリニューアル</option>
+                  <option value="seo">SEO対策</option>
+                  <option value="maintenance">保守・運用サポート</option>
+                  <option value="other">その他</option>
+                </select>
+              </div>
+            </div>
+            <div class="sp-form-group">
+              <label class="sp-form-label" for="message">ご相談内容・ご要望</label>
+              <textarea class="sp-form-textarea" id="message" name="message" placeholder="ご要望やご質問をお気軽にご記入ください。"></textarea>
+            </div>
+            <button type="submit" class="sp-form-submit">
+              送信する
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <p class="sp-form-note">送信いただいた情報は、お問い合わせ対応のみに使用します。</p>
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- LP TEASER -->
+    <section class="sp-lp">
+      <div class="container">
+        <div class="sp-lp-inner">
+          <div class="sp-lp-text scroll-reveal" data-anim="fade-left">
+            <p class="sp-lp-label">LANDING PAGE</p>
+            <h2 class="sp-lp-title">Web / EC制作の<br>詳細ページ</h2>
+            <p class="sp-lp-desc">制作実績・料金プラン・制作フローを詳しくまとめたランディングページを準備中です。</p>
+          </div>
+          <div class="sp-lp-action scroll-reveal" data-anim="fade-right">
+            <span class="sp-lp-btn sp-lp-btn--soon">詳細LPを見る</span>
+            <p class="sp-lp-note">準備中 — もうしばらくお待ちください</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <img src="../logo/3g8qrztn.png" alt="IGNITERA" class="footer-logo">
+          <p class="footer-tagline">挑戦を、証明に変える。</p>
+        </div>
+        <nav class="footer-nav">
+          <p class="footer-nav-title">MENU</p>
+          <a href="../index.html#mission-vision" class="footer-nav-link">ミッション・ビジョン</a>
+          <a href="../index.html#values" class="footer-nav-link">バリュー</a>
+          <a href="../index.html#services" class="footer-nav-link">事業内容</a>
+          <a href="../index.html#representative" class="footer-nav-link">代表メッセージ</a>
+          <a href="../index.html#company-info" class="footer-nav-link">会社概要</a>
+        </nav>
+        <div class="footer-sns">
+          <p class="footer-nav-title">FOLLOW US</p>
+          <div class="sns-buttons">
+            <a href="#" class="sns-btn" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" class="sns-btn" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2025 IGNITERA Inc. All rights reserved.</p>
+        <a href="#" class="footer-policy">プライバシーポリシー</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/scroll-animations.js" defer></script>
+  <script src="../js/nav.js" defer></script>
+</body>
+</html>

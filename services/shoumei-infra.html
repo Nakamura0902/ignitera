@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>証明インフラ — IGNITERA</title>
+  <meta name="description" content="努力・実績・信頼を記録し、証明可能なデータとして積み上げるインフラを構築する。IGNITERAが届けたい未来への基盤。">
+  <link rel="icon" type="image/png" href="../logo/3g8qrztn.png">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/typography.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/sections/header.css">
+  <link rel="stylesheet" href="../css/sections/footer.css">
+  <link rel="stylesheet" href="../css/service-page.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <style>
+    /* 証明インフラ専用スタイル — greens overtone */
+    .sp-hero { background: linear-gradient(140deg, #071a0f 0%, #0a3320 50%, #051510 100%); }
+    .sp-hero::before { background: radial-gradient(circle, rgba(34,197,94,0.10) 0%, transparent 65%); }
+    .sp-hero-label { color: var(--color-green); }
+    .sp-hero-title em { color: var(--color-green); }
+    .sp-hero-cta { background-color: var(--color-green); }
+    .sp-hero-cta:hover { background-color: #16A34A; box-shadow: 0 8px 24px rgba(34,197,94,0.3); }
+    .sp-service-item { border-left-color: var(--color-green); }
+    .sp-service-item:hover { border-left-color: #4ade80; }
+    .sp-service-icon { background: var(--color-green-light); }
+    .sp-service-icon svg { color: #16A34A; }
+    .sp-contact .section-label { color: var(--color-green); }
+    .sp-form-label span { color: var(--color-green); }
+    .sp-form-input:focus, .sp-form-textarea:focus, .sp-form-select:focus {
+      border-color: var(--color-green);
+      box-shadow: 0 0 0 3px rgba(34,197,94,0.12);
+    }
+    .sp-form-submit { background-color: var(--color-green); }
+    .sp-form-submit:hover { background-color: #16A34A; }
+    .sp-lp { background: linear-gradient(135deg, #071a0f 0%, #0a3320 100%); }
+    .sp-lp-label { color: var(--color-green); }
+    .sp-lp-btn--soon::after { background: var(--color-cyan); }
+
+    /* Coming soon notice */
+    .sp-coming-notice {
+      background: rgba(34,197,94,0.08);
+      border: 1px solid rgba(34,197,94,0.2);
+      border-radius: var(--radius-lg);
+      padding: var(--space-4) var(--space-6);
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      margin-bottom: var(--space-8);
+    }
+    .sp-coming-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--color-green);
+      flex-shrink: 0;
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+    .sp-coming-text {
+      font-size: var(--font-small);
+      color: rgba(255,255,255,0.6);
+      line-height: 1.7;
+    }
+    .sp-coming-text strong {
+      color: #4ade80;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <header id="site-header" role="banner">
+    <div class="container">
+      <div class="header-inner">
+        <a href="../index.html" class="header-logo" aria-label="IGNITERA トップへ">
+          <img src="../logo/3g8qrztn.png" alt="IGNITERA">
+        </a>
+        <nav class="header-nav">
+          <a href="../index.html#mission-vision" class="nav-link">MISSION・VISION</a>
+          <a href="../index.html#values" class="nav-link">VALUES</a>
+          <a href="../index.html#services" class="nav-link is-active">事業内容</a>
+          <a href="../index.html#representative" class="nav-link">代表メッセージ</a>
+          <a href="../index.html#company-info" class="nav-link">会社概要</a>
+        </nav>
+        <a href="#contact" class="btn btn-outline header-cta">事前登録</a>
+        <button class="hamburger" aria-label="メニューを開く">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="mobile-nav">
+    <a href="../index.html#mission-vision" class="nav-link">ミッション</a>
+    <a href="../index.html#values" class="nav-link">バリュー</a>
+    <a href="../index.html#services" class="nav-link">事業内容</a>
+    <a href="../index.html#representative" class="nav-link">代表メッセージ</a>
+    <a href="../index.html#company-info" class="nav-link">会社概要</a>
+    <a href="#contact" class="nav-link">事前登録</a>
+  </nav>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="sp-hero">
+      <div class="container">
+        <div class="sp-hero-inner">
+          <a href="../index.html#services" class="sp-hero-back">
+            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M13 8H3M7 12l-4-4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            事業一覧へ戻る
+          </a>
+          <p class="sp-hero-label">
+            <span class="accent-bar accent-bar--green"></span>
+            SERVICE 04
+          </p>
+          <h1 class="sp-hero-title"><em>証明</em>インフラ</h1>
+          <p class="sp-hero-desc">
+            努力・実績・信頼を記録し、証明可能なデータとして積み上げるインフラを構築する。IGNITERAが最も届けたい、未来への基盤。
+          </p>
+
+          <div class="sp-coming-notice">
+            <span class="sp-coming-dot"></span>
+            <p class="sp-coming-text"><strong>現在開発中です。</strong>ローンチに先立ち、事前登録を受け付けています。いち早く情報をお届けします。</p>
+          </div>
+
+          <a href="#contact" class="sp-hero-cta">
+            事前登録・情報を受け取る
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONCEPT -->
+    <section class="sp-services">
+      <div class="container">
+        <p class="section-label scroll-reveal" data-anim="fade-up">
+          <span class="accent-bar" style="background: linear-gradient(180deg, var(--color-green), #16A34A);"></span>
+          CONCEPT
+        </p>
+        <h2 class="text-h2 text-navy scroll-reveal" data-anim="fade-up" data-delay="100">
+          なぜ「証明インフラ」なのか
+        </h2>
+
+        <div class="sp-services-grid">
+
+          <div class="sp-service-item scroll-reveal" data-anim="fade-up">
+            <div class="sp-service-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="sp-service-name">努力の記録・蓄積</h3>
+            <p class="sp-service-desc">日々の取り組み・成果・行動履歴をデータとして蓄積。「やってきた」という事実を、消えない形で残す仕組みを提供する。</p>
+          </div>
+
+          <div class="sp-service-item scroll-reveal" data-anim="fade-up" data-delay="80">
+            <div class="sp-service-icon">
+              <svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </div>
+            <h3 class="sp-service-name">実績の証明・可視化</h3>
+            <p class="sp-service-desc">積み上げたデータを、誰もが確認できる形で証明する。感覚や印象ではなく、記録に基づいた信頼を構築する。</p>
+          </div>
+
+          <div class="sp-service-item scroll-reveal" data-anim="fade-up" data-delay="160">
+            <div class="sp-service-icon">
+              <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3 class="sp-service-name">信頼の流通・共有</h3>
+            <p class="sp-service-desc">証明された実績を必要な人・組織へ流通させるインフラを整備。信頼が「感覚」ではなく「記録」として社会に根付く世界をつくる。</p>
+          </div>
+
+          <div class="sp-service-item scroll-reveal" data-anim="fade-up" data-delay="240">
+            <div class="sp-service-icon">
+              <svg viewBox="0 0 24 24"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>
+            </div>
+            <h3 class="sp-service-name">継続的な成長の可視化</h3>
+            <p class="sp-service-desc">過去から現在への成長曲線を客観的に示す。一時点の評価ではなく、継続した取り組みそのものが価値になる仕組みを提供する。</p>
+          </div>
+
+          <div class="sp-service-item scroll-reveal" data-anim="fade-up" data-delay="320">
+            <div class="sp-service-icon">
+              <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <h3 class="sp-service-name">個人・組織双方に対応</h3>
+            <p class="sp-service-desc">個人の挑戦から組織の実績管理まで、スケールを問わず活用できる汎用インフラとして設計する。</p>
+          </div>
+
+          <div class="sp-service-item scroll-reveal" data-anim="fade-up" data-delay="400">
+            <div class="sp-service-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <h3 class="sp-service-name">社会インフラとしての設計</h3>
+            <p class="sp-service-desc">単一のツールではなく、社会の信頼基盤となるインフラを目指す。IGNITERAのミッションを最も体現する、中核事業。</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PRE-REGISTRATION FORM -->
+    <section class="sp-contact" id="contact">
+      <div class="container">
+        <div class="sp-contact-inner">
+          <div class="sp-contact-lead scroll-reveal" data-anim="fade-left">
+            <p class="section-label" style="color: var(--color-green);">
+              <span class="accent-bar" style="background: linear-gradient(180deg, var(--color-green), #16A34A);"></span>
+              PRE-REGISTRATION
+            </p>
+            <h2 class="sp-contact-title">事前登録で<br>いち早く情報を受け取る</h2>
+            <p class="sp-contact-body">証明インフラのローンチ情報・ベータ版招待・詳細資料をいち早くお届けします。登録は無料です。</p>
+          </div>
+          <form class="sp-form scroll-reveal" data-anim="fade-right" action="mailto:contact@ignitera.co.jp" method="post" enctype="text/plain">
+            <div class="sp-form-row">
+              <div class="sp-form-group">
+                <label class="sp-form-label" for="name">お名前<span>*</span></label>
+                <input class="sp-form-input" type="text" id="name" name="name" placeholder="山田 太郎" required>
+              </div>
+              <div class="sp-form-group">
+                <label class="sp-form-label" for="company">会社名 / 組織名</label>
+                <input class="sp-form-input" type="text" id="company" name="company" placeholder="株式会社○○">
+              </div>
+            </div>
+            <div class="sp-form-group">
+              <label class="sp-form-label" for="email">メールアドレス<span>*</span></label>
+              <input class="sp-form-input" type="email" id="email" name="email" placeholder="your@email.com" required>
+            </div>
+            <div class="sp-form-group">
+              <label class="sp-form-label" for="use-case">利用を想定している場面</label>
+              <div class="sp-form-select-wrap">
+                <select class="sp-form-select" id="use-case" name="use-case">
+                  <option value="">選択してください</option>
+                  <option value="individual">個人の実績管理・証明</option>
+                  <option value="team">チーム・組織の実績管理</option>
+                  <option value="hr">採用・人事評価への活用</option>
+                  <option value="sales">営業・取引先への実績証明</option>
+                  <option value="other">その他・まだ具体的でない</option>
+                </select>
+              </div>
+            </div>
+            <div class="sp-form-group">
+              <label class="sp-form-label" for="message">解決したい課題・期待すること（任意）</label>
+              <textarea class="sp-form-textarea" id="message" name="message" placeholder="現在困っていることや、このサービスに期待することをお聞かせください。"></textarea>
+            </div>
+            <button type="submit" class="sp-form-submit" style="background-color: var(--color-green);">
+              事前登録する（無料）
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <p class="sp-form-note">登録いただいたメールアドレスには、ローンチ情報・ベータ版招待のみをお送りします。</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- LP TEASER -->
+    <section class="sp-lp">
+      <div class="container">
+        <div class="sp-lp-inner">
+          <div class="sp-lp-text scroll-reveal" data-anim="fade-left">
+            <p class="sp-lp-label">LANDING PAGE</p>
+            <h2 class="sp-lp-title">証明インフラの<br>詳細ページ</h2>
+            <p class="sp-lp-desc">サービスの全貌・ビジョン・ロードマップをまとめたランディングページを準備中です。</p>
+          </div>
+          <div class="sp-lp-action scroll-reveal" data-anim="fade-right">
+            <span class="sp-lp-btn sp-lp-btn--soon">詳細LPを見る</span>
+            <p class="sp-lp-note">準備中 — もうしばらくお待ちください</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <img src="../logo/3g8qrztn.png" alt="IGNITERA" class="footer-logo">
+          <p class="footer-tagline">挑戦を、証明に変える。</p>
+        </div>
+        <nav class="footer-nav">
+          <p class="footer-nav-title">MENU</p>
+          <a href="../index.html#services" class="footer-nav-link">事業内容</a>
+          <a href="../index.html#representative" class="footer-nav-link">代表メッセージ</a>
+          <a href="../index.html#company-info" class="footer-nav-link">会社概要</a>
+        </nav>
+        <div class="footer-sns">
+          <p class="footer-nav-title">FOLLOW US</p>
+          <div class="sns-buttons">
+            <a href="#" class="sns-btn" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" class="sns-btn" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2025 IGNITERA Inc. All rights reserved.</p>
+        <a href="#" class="footer-policy">プライバシーポリシー</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/scroll-animations.js" defer></script>
+  <script src="../js/nav.js" defer></script>
+</body>
+</html>

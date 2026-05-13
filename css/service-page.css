@@ -1,0 +1,473 @@
+/* ================================================================
+   SERVICE PAGE — shared styles for all service detail pages
+================================================================ */
+
+/* ----------------------------------------------------------------
+   Page hero
+---------------------------------------------------------------- */
+.sp-hero {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-top: var(--header-height);
+  background: linear-gradient(140deg, #081830 0%, #0B3D8C 60%, #0a2a5e 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.sp-hero::before {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 198, 255, 0.10) 0%, transparent 65%);
+  top: -100px;
+  right: -100px;
+  pointer-events: none;
+}
+
+.sp-hero-inner {
+  padding-block: var(--space-16) var(--space-12);
+  position: relative;
+  z-index: 1;
+}
+
+.sp-hero-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: var(--font-xs);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  margin-bottom: var(--space-6);
+  transition: color var(--duration-fast) var(--ease-in-out);
+}
+
+.sp-hero-back:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.sp-hero-back svg {
+  width: 14px;
+  height: 14px;
+}
+
+.sp-hero-label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-xs);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-cyan);
+  margin-bottom: var(--space-4);
+}
+
+.sp-hero-title {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--color-white);
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-4);
+}
+
+.sp-hero-title em {
+  font-style: normal;
+  color: var(--color-cyan);
+}
+
+.sp-hero-desc {
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.85;
+  max-width: 580px;
+  margin-bottom: var(--space-8);
+}
+
+.sp-hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+  padding: 0.85em 2em;
+  border-radius: var(--radius-md);
+  background-color: var(--color-cyan);
+  color: var(--color-navy);
+  font-size: var(--font-small);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  transition:
+    background-color var(--duration-fast) var(--ease-in-out),
+    transform var(--duration-fast) var(--ease-in-out),
+    box-shadow var(--duration-fast) var(--ease-in-out);
+}
+
+.sp-hero-cta:hover {
+  background-color: var(--color-white);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 198, 255, 0.3);
+}
+
+/* ----------------------------------------------------------------
+   Services offered grid
+---------------------------------------------------------------- */
+.sp-services {
+  background-color: var(--color-bg);
+  padding-block: var(--space-16);
+}
+
+.sp-services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+  margin-top: var(--space-8);
+}
+
+.sp-service-item {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6) var(--space-4);
+  border-left: 3px solid var(--color-blue);
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform var(--duration-base) var(--ease-out-expo),
+    box-shadow var(--duration-base) var(--ease-out-expo),
+    border-left-color var(--duration-base) var(--ease-in-out);
+}
+
+.sp-service-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-left-color: var(--color-cyan);
+}
+
+.sp-service-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: var(--color-cyan-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-3);
+}
+
+.sp-service-icon svg {
+  width: 22px;
+  height: 22px;
+  color: var(--color-blue);
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.sp-service-name {
+  font-size: var(--font-h3);
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-bottom: var(--space-2);
+}
+
+.sp-service-desc {
+  font-size: var(--font-small);
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+}
+
+/* ----------------------------------------------------------------
+   Contact form section
+---------------------------------------------------------------- */
+.sp-contact {
+  background-color: var(--color-white);
+  padding-block: var(--space-16);
+}
+
+.sp-contact-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-16);
+  align-items: start;
+}
+
+.sp-contact-lead {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  position: sticky;
+  top: calc(var(--header-height) + var(--space-4));
+}
+
+.sp-contact-title {
+  font-size: var(--font-h2);
+  font-weight: 700;
+  color: var(--color-navy);
+  line-height: 1.4;
+}
+
+.sp-contact-body {
+  font-size: var(--font-small);
+  color: var(--color-text-secondary);
+  line-height: 1.9;
+}
+
+/* Form */
+.sp-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.sp-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+
+.sp-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.sp-form-label {
+  font-size: var(--font-xs);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--color-text-secondary);
+}
+
+.sp-form-label span {
+  color: var(--color-blue);
+  margin-left: 0.3em;
+}
+
+.sp-form-input,
+.sp-form-textarea,
+.sp-form-select {
+  width: 100%;
+  padding: 0.75em 1em;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--font-small);
+  font-family: var(--font-sans);
+  color: var(--color-text-primary);
+  background-color: var(--color-white);
+  transition:
+    border-color var(--duration-fast) var(--ease-in-out),
+    box-shadow var(--duration-fast) var(--ease-in-out);
+  appearance: none;
+}
+
+.sp-form-input:focus,
+.sp-form-textarea:focus,
+.sp-form-select:focus {
+  outline: none;
+  border-color: var(--color-blue);
+  box-shadow: 0 0 0 3px rgba(26, 111, 212, 0.12);
+}
+
+.sp-form-input::placeholder,
+.sp-form-textarea::placeholder {
+  color: var(--color-text-muted);
+}
+
+.sp-form-textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.sp-form-select-wrap {
+  position: relative;
+}
+
+.sp-form-select-wrap::after {
+  content: '';
+  position: absolute;
+  right: 1em;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid var(--color-text-muted);
+  pointer-events: none;
+}
+
+.sp-form-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6em;
+  width: 100%;
+  padding: 1em 2em;
+  border-radius: var(--radius-md);
+  background-color: var(--color-blue);
+  color: var(--color-white);
+  font-size: var(--font-body);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  border: none;
+  cursor: pointer;
+  transition:
+    background-color var(--duration-fast) var(--ease-in-out),
+    transform var(--duration-fast) var(--ease-in-out),
+    box-shadow var(--duration-fast) var(--ease-in-out);
+  margin-top: var(--space-2);
+}
+
+.sp-form-submit:hover {
+  background-color: var(--color-navy);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.sp-form-note {
+  font-size: var(--font-xs);
+  color: var(--color-text-muted);
+  text-align: center;
+  line-height: 1.7;
+}
+
+/* ----------------------------------------------------------------
+   LP teaser banner
+---------------------------------------------------------------- */
+.sp-lp {
+  background: linear-gradient(135deg, var(--color-navy) 0%, #0a2558 100%);
+  padding-block: var(--space-16);
+  position: relative;
+  overflow: hidden;
+}
+
+.sp-lp::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 80% at 80% 50%, rgba(0, 198, 255, 0.06) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.sp-lp-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-8);
+}
+
+.sp-lp-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.sp-lp-label {
+  font-size: var(--font-xs);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-cyan);
+}
+
+.sp-lp-title {
+  font-size: var(--font-h2);
+  font-weight: 700;
+  color: var(--color-white);
+  line-height: 1.4;
+}
+
+.sp-lp-desc {
+  font-size: var(--font-small);
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.8;
+  max-width: 480px;
+}
+
+.sp-lp-action {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.sp-lp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+  padding: 0.9em 2.2em;
+  border-radius: var(--radius-md);
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.5);
+  font-size: var(--font-small);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: default;
+  position: relative;
+}
+
+.sp-lp-btn--soon::after {
+  content: 'COMING SOON';
+  position: absolute;
+  top: -10px;
+  right: -8px;
+  background: var(--color-green);
+  color: white;
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 0.2em 0.5em;
+  border-radius: var(--radius-full);
+}
+
+.sp-lp-note {
+  font-size: var(--font-xs);
+  color: rgba(255, 255, 255, 0.25);
+  letter-spacing: 0.04em;
+}
+
+/* ----------------------------------------------------------------
+   Responsive
+---------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .sp-services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sp-contact-inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .sp-contact-lead {
+    position: static;
+  }
+
+  .sp-lp-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .sp-services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sp-form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .sp-hero-title {
+    font-size: clamp(1.8rem, 7vw, 2.5rem);
+  }
+}
