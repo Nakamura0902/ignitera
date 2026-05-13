@@ -1,9 +1,9 @@
 /* ================================================================
-   MISSION / VISION — glass cards on dark
+   MISSION / VISION — bold cards on dark
 ================================================================ */
 
 #mission-vision {
-  background: linear-gradient(160deg, #060f1f 0%, #0B3D8C 55%, #061528 100%);
+  background: linear-gradient(160deg, #060f1f 0%, #0a2660 55%, #061528 100%);
   padding-block: var(--space-20);
   position: relative;
   overflow: hidden;
@@ -15,7 +15,7 @@
   width: 700px;
   height: 700px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(0, 198, 255, 0.07) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(0, 198, 255, 0.08) 0%, transparent 65%);
   top: -200px;
   right: -150px;
   pointer-events: none;
@@ -27,15 +27,18 @@
   width: 500px;
   height: 500px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(34, 197, 94, 0.05) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(34, 197, 94, 0.06) 0%, transparent 65%);
   bottom: -150px;
   left: -100px;
   pointer-events: none;
 }
 
+/* ----------------------------------------------------------------
+   Section header
+---------------------------------------------------------------- */
 .mv-section-head {
   text-align: center;
-  margin-bottom: var(--space-12);
+  margin-bottom: var(--space-10);
 }
 
 .mv-section-label {
@@ -44,21 +47,13 @@
   gap: var(--space-2);
   font-size: var(--font-xs);
   font-weight: 700;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.4);
-  margin-bottom: var(--space-3);
-}
-
-.mv-section-title {
-  font-size: var(--font-h3);
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.25);
-  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.35);
 }
 
 /* ----------------------------------------------------------------
-   Cards grid
+   Grid
 ---------------------------------------------------------------- */
 .mv-grid {
   display: grid;
@@ -69,49 +64,43 @@
 }
 
 /* ----------------------------------------------------------------
-   Base card — glassmorphism
+   Card base
 ---------------------------------------------------------------- */
 .mv-card {
   position: relative;
   border-radius: var(--radius-xl);
   padding: var(--space-8);
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   overflow: hidden;
   transition:
-    background var(--duration-base) var(--ease-out-expo),
-    border-color var(--duration-base) var(--ease-out-expo),
     transform var(--duration-base) var(--ease-out-expo),
     box-shadow var(--duration-base) var(--ease-out-expo);
 }
 
 .mv-card:hover {
-  background: rgba(255, 255, 255, 0.07);
-  transform: translateY(-4px);
-  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px);
 }
 
-/* Mission card — cyan accent */
+/* Mission — cyan tinted */
 .mv-card--mission {
-  border-color: rgba(0, 198, 255, 0.18);
+  background: linear-gradient(135deg, #0d2a5e 0%, #0f3570 100%);
+  border: 1px solid rgba(0, 198, 255, 0.25);
+  box-shadow: inset 0 1px 0 rgba(0,198,255,0.15), 0 4px 24px rgba(0,0,0,0.3);
 }
 .mv-card--mission:hover {
-  border-color: rgba(0, 198, 255, 0.35);
-  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(0, 198, 255, 0.15);
+  box-shadow: inset 0 1px 0 rgba(0,198,255,0.25), 0 20px 48px rgba(0,0,0,0.4), 0 0 0 1px rgba(0,198,255,0.3);
 }
 
-/* Vision card — green accent */
+/* Vision — green tinted */
 .mv-card--vision {
-  border-color: rgba(34, 197, 94, 0.18);
+  background: linear-gradient(135deg, #0a2a18 0%, #0d3a20 100%);
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  box-shadow: inset 0 1px 0 rgba(34,197,94,0.15), 0 4px 24px rgba(0,0,0,0.3);
 }
 .mv-card--vision:hover {
-  border-color: rgba(34, 197, 94, 0.35);
-  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(34, 197, 94, 0.15);
+  box-shadow: inset 0 1px 0 rgba(34,197,94,0.25), 0 20px 48px rgba(0,0,0,0.4), 0 0 0 1px rgba(34,197,94,0.3);
 }
 
-/* Top gradient border line */
+/* Top gradient line */
 .mv-card::before {
   content: '';
   position: absolute;
@@ -122,29 +111,28 @@
   border-radius: var(--radius-xl) var(--radius-xl) 0 0;
 }
 .mv-card--mission::before {
-  background: linear-gradient(90deg, var(--color-cyan), var(--color-blue), transparent);
+  background: linear-gradient(90deg, var(--color-cyan), rgba(0,198,255,0.3), transparent);
 }
 .mv-card--vision::before {
-  background: linear-gradient(90deg, var(--color-green), #16A34A, transparent);
+  background: linear-gradient(90deg, #4ade80, rgba(34,197,94,0.3), transparent);
 }
 
-/* Ghost number watermark */
+/* Ghost letter */
 .mv-card-ghost {
   position: absolute;
-  bottom: -0.2em;
+  bottom: -0.25em;
   right: 0.05em;
-  font-size: 10rem;
+  font-size: 11rem;
   font-weight: 800;
   line-height: 1;
   letter-spacing: -0.06em;
   pointer-events: none;
   user-select: none;
-  opacity: 0.045;
-  color: white;
+  color: rgba(255,255,255,0.03);
 }
 
 /* ----------------------------------------------------------------
-   Card inner content
+   Card content
 ---------------------------------------------------------------- */
 .mv-card-inner {
   display: flex;
@@ -152,61 +140,60 @@
   gap: var(--space-6);
   position: relative;
   z-index: 1;
+  min-height: 240px;
 }
 
 .mv-card-header {
   display: flex;
   align-items: center;
-  gap: var(--space-3);
+  justify-content: space-between;
 }
 
 .mv-card-tag {
-  font-size: var(--font-xs);
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
   padding: 0.3em 0.9em;
   border-radius: var(--radius-full);
+  font-size: var(--font-xs);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
 }
-
 .mv-card--mission .mv-card-tag {
-  background: rgba(0, 198, 255, 0.12);
+  background: rgba(0, 198, 255, 0.15);
   color: var(--color-cyan);
-  border: 1px solid rgba(0, 198, 255, 0.25);
+  border: 1px solid rgba(0, 198, 255, 0.3);
 }
-
 .mv-card--vision .mv-card-tag {
-  background: rgba(34, 197, 94, 0.12);
+  background: rgba(34, 197, 94, 0.15);
   color: #4ade80;
-  border: 1px solid rgba(34, 197, 94, 0.25);
+  border: 1px solid rgba(34, 197, 94, 0.3);
 }
 
 .mv-card-index {
   font-size: var(--font-xs);
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.15em;
-  color: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.18);
 }
 
 .mv-card-body {
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
+  gap: var(--space-4);
 }
 
 .mv-card-heading {
-  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  font-size: clamp(1.2rem, 2.2vw, 1.65rem);
   font-weight: 700;
-  line-height: 1.75;
+  line-height: 1.8;
   color: var(--color-white);
   letter-spacing: 0.01em;
 }
-
 .mv-card--mission .mv-card-heading em {
   font-style: normal;
   color: var(--color-cyan);
 }
-
 .mv-card--vision .mv-card-heading em {
   font-style: normal;
   color: #4ade80;
@@ -217,6 +204,7 @@
   height: 1px;
   width: 48px;
   border-radius: 1px;
+  margin-top: auto;
 }
 .mv-card--mission .mv-card-rule { background: rgba(0, 198, 255, 0.4); }
 .mv-card--vision  .mv-card-rule { background: rgba(34, 197, 94, 0.4); }
