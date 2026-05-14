@@ -264,3 +264,81 @@
   width: 16px;
   height: 16px;
 }
+
+/* ----------------------------------------------------------------
+   Category headers — span full grid width
+---------------------------------------------------------------- */
+.services-category {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding-top: var(--space-4);
+}
+.services-category:first-child {
+  padding-top: 0;
+}
+.services-category-label {
+  font-size: var(--font-xs);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(11, 61, 140, 0.5);
+  white-space: nowrap;
+}
+.services-category-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(11,61,140,0.15), transparent);
+}
+
+/* ----------------------------------------------------------------
+   Joint venture card — amber / gold accent
+---------------------------------------------------------------- */
+.service-card--joint {
+  background: linear-gradient(140deg, #1a1230 0%, #251848 50%, #1a0e38 100%);
+}
+.service-card--joint::before {
+  background: radial-gradient(circle, rgba(251,191,36,0.10) 0%, transparent 70%);
+}
+.service-card--joint .service-bar {
+  background: linear-gradient(90deg, #fbbf24, #f59e0b, transparent);
+}
+.service-card--joint .service-card-index {
+  color: rgba(251,191,36,0.65);
+}
+.service-card--joint .service-card-title em {
+  color: #fbbf24;
+}
+.service-card--joint .service-card-arrow {
+  border-color: rgba(251,191,36,0.25);
+  color: rgba(251,191,36,0.5);
+}
+.service-card--joint:hover .service-card-arrow {
+  background-color: rgba(251,191,36,0.12);
+  border-color: rgba(251,191,36,0.5);
+  color: #fbbf24;
+}
+.service-card--joint:hover .service-card-num {
+  color: rgba(251,191,36,0.07);
+}
+.service-card--joint:hover {
+  box-shadow:
+    0 20px 60px rgba(251,191,36,0.12),
+    0 0 0 1px rgba(251,191,36,0.15);
+}
+
+.joint-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  padding: 0.28em 0.75em;
+  border-radius: var(--radius-full);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background-color: rgba(251,191,36,0.12);
+  color: #fbbf24;
+  border: 1px solid rgba(251,191,36,0.25);
+}
