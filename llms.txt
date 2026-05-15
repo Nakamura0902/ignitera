@@ -1,0 +1,61 @@
+# IGNITERA
+
+> 挑戦を、証明に変える。
+
+株式会社IGNITERAは、テクノロジーを通じて企業・個人の挑戦を証明可能な実績に変えることを使命とする会社です。
+
+## 基本情報
+
+- **会社名**: 株式会社IGNITERA
+- **設立**: 2026年
+- **代表者**: 橋 丈偉
+- **メール**: ignitera777@gmail.com
+- **X (Twitter)**: https://x.com/ignitera_jp
+- **Instagram**: https://www.instagram.com/ignitera_official/
+- **サイト**: https://ignitera.jp
+
+## ミッション
+
+挑戦する人・組織が、その努力と成果を正しく証明できる世界をつくる。
+
+## ビジョン
+
+すべての挑戦が、証明された実績になる社会インフラを構築する。
+
+## 自社事業
+
+### Web / EC制作
+コーポレートサイトからECサイトまで、ビジネスの成果に直結するWebを設計・制作する。
+- 詳細: https://ignitera.jp/services/web-ec.html
+
+### アプリ制作
+iOS・Androidのネイティブアプリ開発からクロスプラットフォーム対応まで。
+- 詳細: https://ignitera.jp/services/app.html
+
+### Benchmark × Action OS
+業界標準のベンチマークと現場のアクションを連動させる独自プラットフォーム。
+- 詳細: https://ignitera.jp/services/benchmark.html
+
+### 証明インフラ（Coming Soon）
+努力・実績・信頼を記録し、証明可能なデータとして積み上げるインフラ。
+- 詳細: https://ignitera.jp/services/shoumei-infra.html
+
+## 共同事業
+
+### セールスプロモーション（株式会社ASTYとの共同事業）
+販売促進・営業支援・市場開拓を一体で推進する。
+- パートナー: 株式会社ASTY (https://www.asty-hldgs.com/)
+- 詳細: https://ignitera.jp/services/sales-promotion.html
+
+## バリュー
+
+1. **Fact First** — 事実から考える
+2. **Visible Value** — 価値を見える形にする
+3. **Field Driven** — 現場から発想する
+4. **Build Trust** — 信頼を積み上げる
+5. **Make It Repeatable** — 再現性をつくる
+6. **Stay Honest** — 誠実であり続ける
+
+## お問い合わせ
+
+https://ignitera.jp/contact.html

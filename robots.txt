@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+
+# AI crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://ignitera.jp/sitemap.xml
