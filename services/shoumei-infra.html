@@ -20,6 +20,8 @@
     /* 証明インフラ専用スタイル — greens overtone */
     .sp-hero { background: linear-gradient(140deg, #071a0f 0%, #0a3320 50%, #051510 100%); }
     .sp-hero::before { background: radial-gradient(circle, rgba(34,197,94,0.10) 0%, transparent 65%); }
+    /* ヒーロー画像を green トーンに寄せる */
+    .sp-hero::after { filter: saturate(0.5) hue-rotate(-80deg) brightness(0.95); }
     .sp-hero-label { color: var(--color-green); }
     .sp-hero-title em { color: var(--color-green); }
     .sp-hero-cta { background-color: var(--color-green); }
@@ -135,7 +137,7 @@
   <main>
 
     <!-- HERO -->
-    <section class="sp-hero">
+    <section class="sp-hero" style="--hero-image:url('../images/syoumei_inf.webp');">
       <div class="container">
         <div class="sp-hero-inner">
           <a href="../index.html#services" class="sp-hero-back">

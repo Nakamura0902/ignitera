@@ -31,6 +31,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://ignitera.jp/services/order-suit.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://ignitera.jp/services/sales-promotion.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

@@ -28,6 +28,22 @@
   pointer-events: none;
 }
 
+/* Hero visual — each page sets --hero-image on .sp-hero */
+.sp-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--hero-image, none);
+  background-size: cover;
+  background-position: 72% 18%;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  filter: saturate(1.05) brightness(0.92);
+  -webkit-mask-image: linear-gradient(100deg, transparent 30%, rgba(0, 0, 0, 0.4) 56%, #000 88%);
+  mask-image: linear-gradient(100deg, transparent 30%, rgba(0, 0, 0, 0.4) 56%, #000 88%);
+  pointer-events: none;
+}
+
 .sp-hero-inner {
   padding-block: var(--space-16) var(--space-12);
   position: relative;
@@ -458,6 +474,16 @@
   }
 }
 
+@media (max-width: 1024px) {
+  /* 縦長になるほど被写体が切れるため、右寄せを強めて上から重ねる */
+  .sp-hero::after {
+    background-position: 78% 38%;
+    opacity: 0.42;
+    -webkit-mask-image: linear-gradient(185deg, #000 0%, rgba(0, 0, 0, 0.45) 48%, transparent 78%);
+    mask-image: linear-gradient(185deg, #000 0%, rgba(0, 0, 0, 0.45) 48%, transparent 78%);
+  }
+}
+
 @media (max-width: 768px) {
   .sp-services-grid {
     grid-template-columns: 1fr;
@@ -469,5 +495,9 @@
 
   .sp-hero-title {
     font-size: clamp(1.8rem, 7vw, 2.5rem);
+  }
+
+  .sp-hero::after {
+    opacity: 0.35;
   }
 }

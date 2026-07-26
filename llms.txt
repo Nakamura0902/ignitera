@@ -40,6 +40,10 @@ iOS・Androidのネイティブアプリ開発からクロスプラットフォ�
 努力・実績・信頼を記録し、証明可能なデータとして積み上げるインフラ。
 - 詳細: https://ignitera.jp/services/shoumei-infra.html
 
+### オーダースーツ
+成人式や就職活動、仕事の節目に。一人ひとりの体型や目的、好みに合った一着を提案する。
+- 詳細: https://ignitera.jp/services/order-suit.html
+
 ## 共同事業
 
 ### セールスプロモーション（株式会社ASTYとの共同事業）

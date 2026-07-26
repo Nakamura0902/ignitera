@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>お問い合わせ — IGNITERA</title>
-  <meta name="description" content="IGNITERAへのお問い合わせ・ご相談はこちらから。Web/EC制作・アプリ制作・Benchmark × Action OS・証明インフラの4事業に対応しています。">
+  <meta name="description" content="IGNITERAへのお問い合わせ・ご相談はこちらから。Web/EC制作・アプリ制作・Benchmark × Action OS・証明インフラ・オーダースーツ・セールスプロモーションの6事業に対応しています。">
   <link rel="icon" type="image/png" href="logo/IGNITERA_transparent_full.png">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/tokens.css">
@@ -22,13 +22,13 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="IGNITERA">
   <meta property="og:title" content="お問い合わせ — IGNITERA">
-  <meta property="og:description" content="IGNITERAへのお問い合わせ。Web/EC制作・アプリ制作・Benchmark × Action OS・証明インフラ・セールスプロモーションの5事業に対応しています。">
+  <meta property="og:description" content="IGNITERAへのお問い合わせ。Web/EC制作・アプリ制作・Benchmark × Action OS・証明インフラ・オーダースーツ・セールスプロモーションの6事業に対応しています。">
   <meta property="og:url" content="https://ignitera.jp/contact.html">
   <meta property="og:image" content="https://ignitera.jp/logo/IGNITERA_transparent_full.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@ignitera_jp">
   <meta name="twitter:title" content="お問い合わせ — IGNITERA">
-  <meta name="twitter:description" content="IGNITERAへのお問い合わせ。Web/EC制作・アプリ制作・Benchmark × Action OS・証明インフラ・セールスプロモーションの5事業に対応しています。">
+  <meta name="twitter:description" content="IGNITERAへのお問い合わせ。Web/EC制作・アプリ制作・Benchmark × Action OS・証明インフラ・オーダースーツ・セールスプロモーションの6事業に対応しています。">
   <meta name="twitter:image" content="https://ignitera.jp/logo/IGNITERA_transparent_full.png">
   <script type="application/ld+json">
   {
@@ -112,6 +112,9 @@
         </button>
         <button class="contact-tab" data-service="shoumei" role="tab" aria-selected="false" aria-controls="panel-shoumei">
           証明インフラ
+        </button>
+        <button class="contact-tab" data-service="order-suit" role="tab" aria-selected="false" aria-controls="panel-order-suit">
+          オーダースーツ
         </button>
         <button class="contact-tab" data-service="sales-promotion" role="tab" aria-selected="false" aria-controls="panel-sales-promotion">
           セールスプロモーション
@@ -385,6 +388,72 @@
           </div>
         </div>
 
+        <!-- ── オーダースーツ ── -->
+        <div class="contact-panel" id="panel-order-suit" data-service="order-suit" role="tabpanel">
+          <div class="contact-inner">
+            <div class="contact-lead">
+              <p class="contact-panel-label">
+                <span class="accent-bar"></span>
+                ORDER SUIT
+              </p>
+              <h2 class="contact-panel-title">オーダースーツについて<br>ご相談ください</h2>
+              <p class="contact-panel-body">
+                成人式・就職活動・お仕事用の一着など、ご相談・お見積り・ご予約はお気軽にお問い合わせください。
+              </p>
+              <div class="contact-panel-meta">
+                <span class="contact-meta-item">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1.4"/><path d="M7 4v3.5l2 2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+                  通常2営業日以内にご返信
+                </span>
+                <span class="contact-meta-item">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 3h10v8H2z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M2 3l5 5 5-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+                  contact@ignitera.co.jp
+                </span>
+              </div>
+            </div>
+            <form class="sp-form contact-form" id="form-order-suit" novalidate>
+              <div class="sp-form-row">
+                <div class="sp-form-group">
+                  <label class="sp-form-label" for="os-name">お名前<span>*</span></label>
+                  <input class="sp-form-input" type="text" id="os-name" name="name" placeholder="山田 太郎" required>
+                </div>
+                <div class="sp-form-group">
+                  <label class="sp-form-label" for="os-company">会社名 / 学校名</label>
+                  <input class="sp-form-input" type="text" id="os-company" name="company" placeholder="株式会社○○">
+                </div>
+              </div>
+              <div class="sp-form-group">
+                <label class="sp-form-label" for="os-email">メールアドレス<span>*</span></label>
+                <input class="sp-form-input" type="email" id="os-email" name="email" placeholder="your@email.com" required>
+              </div>
+              <div class="sp-form-group">
+                <label class="sp-form-label" for="os-type">ご相談内容</label>
+                <div class="sp-form-select-wrap">
+                  <select class="sp-form-select" id="os-type" name="service-type">
+                    <option value="">選択してください</option>
+                    <option value="coming-of-age">成人式の一着</option>
+                    <option value="job-hunting">就職活動の一着</option>
+                    <option value="business">ビジネススーツ</option>
+                    <option value="formal">節目・フォーマルの装い</option>
+                    <option value="fitting">採寸・フィッティング</option>
+                    <option value="styling">スタイリング相談</option>
+                    <option value="other">その他</option>
+                  </select>
+                </div>
+              </div>
+              <div class="sp-form-group">
+                <label class="sp-form-label" for="os-message">ご要望・ご質問</label>
+                <textarea class="sp-form-textarea" id="os-message" name="message" placeholder="着用予定の時期やご予算など、お気軽にご記入ください。"></textarea>
+              </div>
+              <button type="submit" class="sp-form-submit">
+                送信する
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <p class="sp-form-note">送信いただいた情報は、お問い合わせ対応のみに使用します。</p>
+            </form>
+          </div>
+        </div>
+
         <!-- ── セールスプロモーション ── -->
         <div class="contact-panel" id="panel-sales-promotion" data-service="sales-promotion" role="tabpanel">
           <div class="contact-inner">
@@ -477,6 +546,7 @@
           <a href="services/app.html" class="footer-nav-link">アプリ制作</a>
           <a href="services/benchmark.html" class="footer-nav-link">Benchmark × Action OS</a>
           <a href="services/shoumei-infra.html" class="footer-nav-link">証明インフラ</a>
+          <a href="services/order-suit.html" class="footer-nav-link">オーダースーツ</a>
           <a href="services/sales-promotion.html" class="footer-nav-link">セールスプロモーション</a>
         </nav>
         <div class="footer-social">
@@ -523,7 +593,7 @@
 
     // Restore from hash
     const hash = location.hash.replace('#', '');
-    const validServices = ['web-ec', 'app', 'benchmark', 'shoumei', 'sales-promotion'];
+    const validServices = ['web-ec', 'app', 'benchmark', 'shoumei', 'order-suit', 'sales-promotion'];
     if (validServices.includes(hash)) activateTab(hash);
 
     // Init forms
@@ -531,6 +601,7 @@
     initContactForm(document.getElementById('form-app'), 'app');
     initContactForm(document.getElementById('form-benchmark'), 'benchmark');
     initContactForm(document.getElementById('form-shoumei'), 'shoumei-infra');
+    initContactForm(document.getElementById('form-order-suit'), 'order-suit');
     initContactForm(document.getElementById('form-sales-promotion'), 'sales-promotion');
   </script>
 

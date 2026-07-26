@@ -19,6 +19,8 @@
   <style>
     /* ── Amber / Gold overrides ── */
     .sp-hero { background: linear-gradient(160deg, #0f0a00 0%, #1a1000 55%, #0a0800 100%); }
+    /* ヒーロー画像を amber トーンに寄せる */
+    .sp-hero::after { filter: saturate(0.45) hue-rotate(-175deg) brightness(0.9); }
     .sp-hero-title em { color: #fbbf24; }
     .sp-hero-cta {
       background: #fbbf24;
@@ -203,7 +205,7 @@
   <main>
 
     <!-- HERO -->
-    <section class="sp-hero">
+    <section class="sp-hero" style="--hero-image:url('../images/sales_pro.webp');">
       <div class="container">
         <div class="sp-hero-inner">
           <a href="../index.html#services" class="sp-hero-back">
@@ -446,6 +448,7 @@
           <a href="app.html" class="footer-nav-link">アプリ制作</a>
           <a href="benchmark.html" class="footer-nav-link">Benchmark × Action OS</a>
           <a href="shoumei-infra.html" class="footer-nav-link">証明インフラ</a>
+          <a href="order-suit.html" class="footer-nav-link">オーダースーツ</a>
           <a href="sales-promotion.html" class="footer-nav-link">セールスプロモーション</a>
         </nav>
         <div class="footer-social">
