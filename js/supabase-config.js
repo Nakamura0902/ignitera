@@ -3,8 +3,8 @@
    以下の2つをSupabaseダッシュボードの「Project Settings > API」から取得して設定してください
 ================================================================ */
 
-const SUPABASE_URL = 'https://fcnmipnsolgxuxrdpbzi.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZjbm1pcG5zb2xneHV4cmRwYnppIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg2NzA0MzMsImV4cCI6MjA5NDI0NjQzM30.Jc8-UGLEs8oB0DYh3cMEIriytdGlWGA1ZIoF1gifr80';
+const SUPABASE_URL = 'https://pzowbfskhiekprdlgfsv.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB6b3diZnNraGlla3ByZGxnZnN2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE2ODE5MTgsImV4cCI6MjA5NzI1NzkxOH0.PpakU9kPR_tavp16ai9Nm5ORa6KMKuW9xmNlXXntxFQ';
 
 /* ----------------------------------------------------------------
    テーブル作成SQL（Supabase SQL Editor で実行）:
